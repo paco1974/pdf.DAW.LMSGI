@@ -1,0 +1,3 @@
+for $oposicion  in  db:open("programaoposicformateado2")/descendant::*:tema for $tema in  (//temasDAW/descendant::*:tema)
+where contains ($tema, $oposicion) 
+return <i>'El Tema de oposición: '{$oposicion/text()}' DE '{$oposicion/ancestor::seccion/seccionDescripcion/text()}' DE '{$oposicion/ancestor::*:bloque/bloqueDescripcion/text()}' Esta EN MÓDULO: '{$tema/ancestor::*:moduloProfesional/codigo/text()} ' APARTADO ' {$tema/ancestor::*:seccion/seccionDescripcion/text()} ' TEMA '{$tema/text()}</i>
